@@ -5,11 +5,11 @@ import { RouterLink } from '@angular/router';
   selector: 'app-header',
   imports: [RouterLink],
   template: `
-    <header class="bg-white">
+    <header class="bg-gray-900">
       <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
           <div class="md:flex md:items-center md:gap-12">
-            <a class="block text-teal-600" href="#">
+            <a class="block text-white" href="#">
               <span class="sr-only">Home</span>
               <svg
                 class="h-8"
@@ -30,7 +30,7 @@ import { RouterLink } from '@angular/router';
               <ul class="flex items-center gap-6 text-sm">
                 <li>
                   <a
-                    class="text-gray-500 transition hover:text-gray-500/75"
+                    class="text-white transition hover:text-gray-500/75"
                     href="#"
                   >
                     About
@@ -39,7 +39,7 @@ import { RouterLink } from '@angular/router';
 
                 <li>
                   <a
-                    class="text-gray-500 transition hover:text-gray-500/75"
+                    class="text-white transition hover:text-gray-500/75"
                     href="#"
                   >
                     Careers
@@ -48,7 +48,7 @@ import { RouterLink } from '@angular/router';
 
                 <li>
                   <a
-                    class="text-gray-500 transition hover:text-gray-500/75"
+                    class="text-white transition hover:text-gray-500/75"
                     href="#"
                   >
                     History
@@ -57,7 +57,7 @@ import { RouterLink } from '@angular/router';
 
                 <li>
                   <a
-                    class="text-gray-500 transition hover:text-gray-500/75"
+                    class="text-white transition hover:text-gray-500/75"
                     href="#"
                   >
                     Services
@@ -66,7 +66,7 @@ import { RouterLink } from '@angular/router';
 
                 <li>
                   <a
-                    class="text-gray-500 transition hover:text-gray-500/75"
+                    class="text-white transition hover:text-gray-500/75"
                     href="#"
                   >
                     Projects
@@ -75,7 +75,7 @@ import { RouterLink } from '@angular/router';
 
                 <li>
                   <a
-                    class="text-gray-500 transition hover:text-gray-500/75"
+                    class="text-white transition hover:text-gray-500/75"
                     href="#"
                   >
                     Blog

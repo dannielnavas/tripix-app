@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-generate',
   imports: [],
   templateUrl: './generate.component.html',
-  styleUrl: './generate.component.scss'
+  styleUrl: './generate.component.scss',
 })
-export class GenerateComponent {
-
-}
+export class GenerateComponent {}
