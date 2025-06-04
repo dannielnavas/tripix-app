@@ -1,1 +1,37 @@
-<app-form-generate />
+<div
+  class="dark bg-gradient-to-br from-dark-950 to-dark-900 min-h-screen flex flex-col items-center p-4 text-gray-100"
+>
+  <div class="w-full max-w-7xl">
+    <!-- Formulario de búsqueda -->
+    <div class="relative mb-10 overflow-hidden">
+      <app-search-form (search)="onSearch($event)"></app-search-form>
+    </div>
+
+    <!-- Sección de destinos populares -->
+    <div class="w-full">
+      <h2 class="text-xl font-bold mb-4">Popular Destinations</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        @for (destination of $destinations(); track destination) {
+        <app-destination-card [destination]="destination" />
+        }
+      </div>
+
+      <!-- Sección de ofertas especiales -->
+      <div class="mt-10">
+        <h2 class="text-xl font-bold mb-4">Special Offers</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          @for (offer of $specialOffers(); track offer) {
+          <app-special-offer-card [offer]="offer"> </app-special-offer-card>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="w-full max-w-7xl mt-10 pt-6 border-t border-dark-700/30">
+    <div class="text-center text-xs text-gray-500">
+      <p>© 2025 Travel Planner. All images from Unsplash.</p>
+    </div>
+  </div>
+</div>

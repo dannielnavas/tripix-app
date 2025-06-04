@@ -1,0 +1,233 @@
+.form-horizontal {
+  width: 100%;
+  padding: 1rem;
+}
+
+.form-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+  position: relative;
+  flex: 1;
+}
+
+.form-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 0;
+  color: white;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+
+  &:focus {
+    outline: none;
+    border-bottom-color: #6366f1;
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0.5rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(23, 32, 63, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.dropdown-item {
+  padding: 0.75rem 1rem;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  }
+}
+
+.trip-form {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem 2rem;
+  border-radius: 100px;
+  backdrop-filter: blur(10px);
+}
+
+.input-group {
+  position: relative;
+  min-width: 150px;
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+    height: 4px;
+    width: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.dates-group {
+  min-width: 280px;
+
+  .date-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .date-separator {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+  }
+}
+
+.input-label {
+  position: absolute;
+  top: -1.2rem;
+  left: 0;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.date-input,
+.search-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+
+  &::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom-color: #6366f1;
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(23, 32, 63, 0.95);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.suggestion-item {
+  padding: 0.5rem 1rem;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 120px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  }
+
+  .button-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .trip-form {
+    flex-direction: column;
+    border-radius: 16px;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .input-group {
+    width: 100%;
+
+    &::after {
+      display: none;
+    }
+  }
+}

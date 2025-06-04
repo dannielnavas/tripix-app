@@ -1,0 +1,190 @@
+<div
+  class="relative backdrop-blur-xl bg-dark-800/40 rounded-2xl overflow-hidden border border-white/5 shadow-2xl"
+  >
+  <!-- Elementos de fondo -->
+  <div
+    class="absolute -top-24 -right-24 w-64 h-64 bg-accent-600/20 rounded-full filter blur-3xl opacity-30 animate-pulse-slow"
+  ></div>
+  <div
+    class="absolute -bottom-32 -left-32 w-80 h-80 bg-purple-600/20 rounded-full filter blur-3xl opacity-20 animate-pulse-slow"
+  ></div>
+
+  <!-- Encabezado -->
+  <div class="p-6 md:p-8">
+    <h1
+      class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+      >
+      Discover Your Next Adventure
+    </h1>
+    <p class="text-gray-400 mt-2">
+      Find perfect destinations tailored to your preferences
+    </p>
+  </div>
+
+  <!-- Formulario -->
+  <div class="px-6 md:px-8 pb-8">
+    <form (ngSubmit)="onSubmit()">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
+        <!-- Rango de fechas -->
+        <div class="md:col-span-2 grid grid-cols-2 gap-4">
+          <div class="relative group">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-accent-600/20 to-purple-600/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+            <div
+              class="relative bg-dark-800/80 border border-dark-700/50 group-hover:border-accent-500/50 rounded-xl p-2 transition-all duration-300"
+              >
+              <label
+                for="start-date"
+                class="block text-xs font-medium text-gray-400 mb-1 ml-2"
+                >FROM</label
+                >
+                <input
+                  type="date"
+                  id="start-date"
+                  [(ngModel)]="searchCriteria.startDate"
+                  name="startDate"
+                  class="w-full bg-transparent border-none text-sm focus:outline-none text-white px-2"
+                  />
+              </div>
+            </div>
+
+            <div class="relative group">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-accent-600/20 to-purple-600/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+              <div
+                class="relative bg-dark-800/80 border border-dark-700/50 group-hover:border-accent-500/50 rounded-xl p-2 transition-all duration-300"
+                >
+                <label
+                  for="end-date"
+                  class="block text-xs font-medium text-gray-400 mb-1 ml-2"
+                  >TO</label
+                  >
+                  <input
+                    type="date"
+                    id="end-date"
+                    [(ngModel)]="searchCriteria.endDate"
+                    name="endDate"
+                    class="w-full bg-transparent border-none text-sm focus:outline-none text-white px-2"
+                    />
+                </div>
+              </div>
+            </div>
+
+            <!-- Ubicación -->
+            <div class="md:col-span-2 grid grid-cols-2 gap-4">
+              <div class="relative group">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-accent-600/20 to-purple-600/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <div
+                  class="relative bg-dark-800/80 border border-dark-700/50 group-hover:border-accent-500/50 rounded-xl p-2 transition-all duration-300"
+                  >
+                  <label
+                    for="city"
+                    class="block text-xs font-medium text-gray-400 mb-1 ml-2"
+                    >CITY</label
+                    >
+                    <input
+                      type="text"
+                      id="city"
+                      [(ngModel)]="searchCriteria.city"
+                      name="city"
+                      placeholder="Any city"
+                      class="w-full bg-transparent border-none text-sm focus:outline-none text-white px-2"
+                      />
+                  </div>
+                </div>
+
+                <div class="relative group">
+                  <div
+                    class="absolute inset-0 bg-gradient-to-r from-accent-600/20 to-purple-600/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                  <div
+                    class="relative bg-dark-800/80 border border-dark-700/50 group-hover:border-accent-500/50 rounded-xl p-2 transition-all duration-300"
+                    >
+                    <label
+                      for="country"
+                      class="block text-xs font-medium text-gray-400 mb-1 ml-2"
+                      >COUNTRY</label
+                      >
+                      <input
+                        type="text"
+                        id="country"
+                        [(ngModel)]="searchCriteria.country"
+                        name="country"
+                        placeholder="Any country"
+                        class="w-full bg-transparent border-none text-sm focus:outline-none text-white px-2"
+                        />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Presupuesto y Botón -->
+                <div class="md:col-span-1 grid grid-cols-1 gap-4">
+                  <div class="relative group">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-r from-accent-600/20 to-purple-600/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    ></div>
+                    <div
+                      class="relative bg-dark-800/80 border border-dark-700/50 group-hover:border-accent-500/50 rounded-xl p-2 transition-all duration-300"
+                      >
+                      <label
+                        for="budget"
+                        class="block text-xs font-medium text-gray-400 mb-1 ml-2"
+                        >BUDGET</label
+                        >
+                        <div class="flex items-center">
+                          <span class="text-gray-500 ml-2">$</span>
+                          <input
+                            type="number"
+                            id="budget"
+                            [(ngModel)]="searchCriteria.budget"
+                            name="budget"
+                            placeholder="Max budget"
+                            class="w-full bg-transparent border-none text-sm focus:outline-none text-white pl-1 pr-2"
+                            />
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      type="submit"
+                      class="relative group h-[52px] overflow-hidden rounded-xl"
+                      >
+                      <div
+                        class="absolute inset-0 bg-gradient-to-r from-accent-600 to-purple-600 group-hover:from-accent-500 group-hover:to-purple-500 transition-all duration-300"
+                      ></div>
+                      <div
+                        class="absolute inset-0.5 rounded-[10px] bg-dark-800/50 group-hover:bg-dark-800/0 backdrop-blur-sm transition-all duration-300"
+                      ></div>
+                      <div
+                        class="relative flex items-center justify-center h-full text-white font-medium"
+                        >
+                        <span
+                          class="group-hover:scale-110 transition-transform duration-300"
+                          >Explore</span
+                          >
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Destinos Populares -->
+              <div class="px-6 md:px-8 pb-6 flex flex-wrap gap-2">
+                <span class="text-xs text-gray-400">Popular:</span>
+                @for (destination of popularDestinations; track destination; let last = $last) {
+                  <a
+                    href="#"
+                    class="text-xs text-accent-400 hover:text-accent-300 transition-colors"
+                    >{{ destination }}</a
+                    >
+                    @if (!last) {
+                      <span class="text-gray-600">•</span>
+                    }
+                  }
+                </div>
+              </div>
