@@ -22,20 +22,32 @@ export class DestinationCardComponent {
   private readonly UnsplashService = inject(UnsplashService);
 
   $destination = input.required<Destination>({ alias: 'destination' });
+  // myResource = rxResource({
+  //   request: () => ({ id: id() }),
+  //   loader: ({ request }) => fromFetch(RESOURCE_URL + request.id),
+  // });
+  // unsplashResource = rxResource<IUnsplashResponse, { image: string }>({
+  //   request: () => ({
+  //     images: this.$destination().country,
+  //   }),
+  //   loader: ({ request }) =>
+  //     this.UnsplashService.getImage(request.images)
+  // });
 
   unsplashResource = rxResource({
-    request: () => ({
-      image: this.$destination().country,
+    params: () => ({
+      images: this.$destination().country,
     }),
-    loader: ({ request }) => this.UnsplashService.getImage(request.image),
+    stream: ({ params }) => this.UnsplashService.getImage(params.images),
+    defaultValue: {
+      total: 0,
+      total_pages: 0,
+      results: [],
+    },
   });
 
   $destinationImage = computed(() => {
-    console.log(
-      'computed',
-      this.unsplashResource.value()?.results[0]?.urls?.full
-    );
-    return this.unsplashResource.value()?.results[0]?.urls?.full;
+    return this.unsplashResource.value()?.results?.[0].urls.full;
   });
 
   get stars(): number[] {
