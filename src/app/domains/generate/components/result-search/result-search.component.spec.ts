@@ -8,9 +8,8 @@ describe('ResultSearchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ResultSearchComponent]
-    })
-    .compileComponents();
+      imports: [ResultSearchComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ResultSearchComponent);
     component = fixture.componentInstance;

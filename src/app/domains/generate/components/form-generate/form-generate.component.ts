@@ -1,5 +1,4 @@
-
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -14,10 +13,10 @@ import {
   templateUrl: './form-generate.component.html',
   styleUrl: './form-generate.component.scss',
 })
-export class FormGenerateComponent {
+export class FormGenerateComponent implements OnInit {
   formGenerate!: FormGroup;
   countries: string[] = ['Spain', 'Mexico', 'Argentina', 'Colombia', 'Chile'];
-  cities: { [key: string]: string[] } = {
+  cities: Record<string, string[]> = {
     Spain: ['Madrid', 'Barcelona', 'Valencia'],
     Mexico: ['Mexico City', 'Guadalajara', 'Monterrey'],
     Argentina: ['Buenos Aires', 'Cordoba', 'Rosario'],
@@ -62,7 +61,7 @@ export class FormGenerateComponent {
   private _filterCountries(value: string): string[] {
     const filterValue = value.toLowerCase();
     return this.countries.filter((country) =>
-      country.toLowerCase().includes(filterValue)
+      country.toLowerCase().includes(filterValue),
     );
   }
 
@@ -70,7 +69,7 @@ export class FormGenerateComponent {
     const filterValue = value.toLowerCase();
     const availableCities = this.cities[country] || [];
     return availableCities.filter((city) =>
-      city.toLowerCase().includes(filterValue)
+      city.toLowerCase().includes(filterValue),
     );
   }
 

@@ -8,9 +8,8 @@ describe('SpecialOfferCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SpecialOfferCardComponent]
-    })
-    .compileComponents();
+      imports: [SpecialOfferCardComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SpecialOfferCardComponent);
     component = fixture.componentInstance;

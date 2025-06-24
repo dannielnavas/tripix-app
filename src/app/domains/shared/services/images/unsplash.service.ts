@@ -17,7 +17,7 @@ export class UnsplashService {
     url.searchParams.append('query', city);
     url.searchParams.append(
       'client_id',
-      'FJM3Kg8a1eAlXCMPS8UAeBGHLczPvPfBkRp_-T6Wi4s'
+      'FJM3Kg8a1eAlXCMPS8UAeBGHLczPvPfBkRp_-T6Wi4s',
     );
 
     return this.http.get<IUnsplashResponse>(url.toString());

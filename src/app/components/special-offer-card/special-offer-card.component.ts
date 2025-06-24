@@ -40,7 +40,7 @@ export class SpecialOfferCardComponent {
   $destinationImage = computed(() => {
     console.log(
       'computed',
-      this.unsplashResource.value()?.results[0]?.urls?.full
+      this.unsplashResource.value()?.results[0]?.urls?.full,
     );
     return this.unsplashResource.value()?.results[0]?.urls?.full;
   });

@@ -100,7 +100,7 @@
   min-width: 150px;
 
   &:not(:last-child)::after {
-    content: '';
+    content: "";
     position: absolute;
     right: -1rem;
     top: 50%;

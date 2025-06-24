@@ -1,36 +1,50 @@
-<div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="min-h-screen bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-md overflow-hidden rounded-xl bg-white shadow-lg">
     <!-- Header -->
     <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-4">
       <h2 class="text-xl font-bold text-white">Plan Your Trip</h2>
-      <p class="text-blue-100 text-sm">Complete the details to generate your itinerary</p>
+      <p class="text-sm text-blue-100">
+        Complete the details to generate your itinerary
+      </p>
     </div>
 
-    <form [formGroup]="formGenerate" (ngSubmit)="onSubmit($event)" class="trip-form">
+    <form
+      [formGroup]="formGenerate"
+      (ngSubmit)="onSubmit($event)"
+      class="trip-form">
       <!-- Grupo de fechas -->
       <div formGroupName="dateRange" class="input-group dates-group">
         <div class="date-inputs">
-          <input type="date" formControlName="start" class="date-input" aria-label="Fecha de inicio">
+          <input
+            type="date"
+            formControlName="start"
+            class="date-input"
+            aria-label="Fecha de inicio" />
           <span class="date-separator">→</span>
-          <input type="date" formControlName="end" class="date-input" aria-label="Fecha de fin">
+          <input
+            type="date"
+            formControlName="end"
+            class="date-input"
+            aria-label="Fecha de fin" />
         </div>
         <span class="input-label">Fechas del viaje</span>
       </div>
 
       <!-- País -->
       <div class="input-group">
-        <input type="text"
+        <input
+          type="text"
           formControlName="country"
           (input)="onCountryInput($event)"
           (focus)="showCountryDropdown = true"
           class="search-input"
-          placeholder="¿A qué país vas?">
+          placeholder="¿A qué país vas?" />
         @if (showCountryDropdown && filteredCountries.length > 0) {
           <div class="suggestions">
             @for (country of filteredCountries; track country) {
-              <div
-                (click)="selectCountry(country)"
-              class="suggestion-item">{{country}}</div>
+              <div (click)="selectCountry(country)" class="suggestion-item">
+                {{ country }}
+              </div>
             }
           </div>
         }
@@ -38,18 +52,19 @@
 
       <!-- Ciudad -->
       <div class="input-group">
-        <input type="text"
+        <input
+          type="text"
           formControlName="city"
           (input)="onCityInput($event)"
           (focus)="showCityDropdown = true"
           class="search-input"
-          placeholder="¿Qué ciudad quieres visitar?">
+          placeholder="¿Qué ciudad quieres visitar?" />
         @if (showCityDropdown && filteredCities.length > 0) {
           <div class="suggestions">
             @for (city of filteredCities; track city) {
-              <div
-                (click)="selectCity(city)"
-              class="suggestion-item">{{city}}</div>
+              <div (click)="selectCity(city)" class="suggestion-item">
+                {{ city }}
+              </div>
             }
           </div>
         }
@@ -57,13 +72,17 @@
 
       <!-- Presupuesto -->
       <div class="input-group">
-        <input type="number"
+        <input
+          type="number"
           formControlName="budget"
           class="search-input"
-          placeholder="Presupuesto en USD">
+          placeholder="Presupuesto en USD" />
       </div>
 
-      <button type="submit" class="submit-button" aria-label="Generar itinerario">
+      <button
+        type="submit"
+        class="submit-button"
+        aria-label="Generar itinerario">
         <span class="button-text">Generar</span>
       </button>
     </form>

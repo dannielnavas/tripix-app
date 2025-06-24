@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-result-search',
   imports: [],
   templateUrl: './result-search.component.html',
-  styleUrl: './result-search.component.scss'
+  styleUrl: './result-search.component.scss',
 })
-export class ResultSearchComponent {
-
-}
+export class ResultSearchComponent {}
